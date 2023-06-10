@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import PaginationInfo from 'features/pagination/pagination.types';
+import styled from 'styled-components';
 
 type PaginationProps = {
   pagination: PaginationInfo;
@@ -20,15 +21,22 @@ const Pagination: FC<PaginationProps> = ({
     onNextPage();
   };
 
+  const StyledPagination = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px 0;
+  `
+
   return (
-    <div className={'pagination'}>
+    <StyledPagination>
       <button disabled={!pagination.prev} onClick={() => onPrev()} className={'button primary'}>
         Previous
       </button>
       <button disabled={!pagination.next} onClick={() => onNext()} className={'button primary'}>
         Next
       </button>
-    </div>
+    </StyledPagination>
   );
 };
 

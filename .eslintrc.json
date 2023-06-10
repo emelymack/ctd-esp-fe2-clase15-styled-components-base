@@ -11,8 +11,7 @@
     "plugin:import/warnings",
     "plugin:import/typescript",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended"
+    "plugin:react-hooks/recommended"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -23,7 +22,7 @@
     "sourceType": "module",
     "tsconfigRootDir": "./src"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "@typescript-eslint/no-unused-vars": ["warn"],
     "react/jsx-uses-react": "off",

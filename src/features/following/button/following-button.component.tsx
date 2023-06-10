@@ -1,9 +1,20 @@
 import { FC } from 'react';
+import styled from 'styled-components';
 
 type FollowingButtonProps = {
   isFav: boolean;
   onToggleFavorite: (setFav: boolean) => void;
 };
+
+const StyledFollowingBtn = styled.button`
+  cursor: pointer;
+  border: none;
+  background-color: #fff;
+`
+const StyledFollowingStar = styled.img`
+  width: 35px;
+  height: 35px;
+`
 
 const FollowingButtonComponent: FC<FollowingButtonProps> = ({
   isFav,
@@ -13,9 +24,9 @@ const FollowingButtonComponent: FC<FollowingButtonProps> = ({
   const alt = isFav ? 'is_favorite' : 'is_not_favorite';
 
   return (
-    <button className={'following-button'} onClick={() => onToggleFavorite(!isFav)}>
-      <img src={src} alt={alt} />
-    </button>
+    <StyledFollowingBtn onClick={() => onToggleFavorite(!isFav)}>
+      <StyledFollowingStar src={src} alt={alt} />
+    </StyledFollowingBtn>
   );
 };
 
